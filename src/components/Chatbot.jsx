@@ -5,11 +5,19 @@ import "./Chatbot.css";
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState([
-        { sender: "bot", text: "Hi! How can I help you today?" },
-    ]);
+    { sender: "bot", text: "Hi, I’m YN! Ask me anything." },
+]);
+
+const predefinedButtons = [
+    "What’s ___?",
+    "Show me your resume.",
+    "Tell me about UMass.",
+];
+
     const [input, setInput] = useState("");
     const [isTouring, setIsTouring] = useState(false);
     const [tourText, setTourText] = useState("");
+    
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
@@ -144,6 +152,23 @@ const Chatbot = () => {
                             </div>
                         ))}
                     </div>
+                    {messages.length === 1 && (
+    <div className="flex flex-col gap-2 px-4 py-2">
+        {predefinedButtons.map((btn, i) => (
+            <button
+                key={i}
+                className="bg-gray-100 hover:bg-gray-200 text-sm rounded px-3 py-1 text-left"
+                onClick={() => {
+                    setInput(btn);
+                    sendMessage();
+                }}
+            >
+                {btn}
+            </button>
+        ))}
+    </div>
+)}
+
 
                     <div className="chatbot-input">
                         <input
