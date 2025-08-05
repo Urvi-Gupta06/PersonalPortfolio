@@ -5,19 +5,19 @@ import "./Chatbot.css";
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState([
-    { sender: "bot", text: "Hi, I’m YN! Ask me anything." },
-]);
+        { sender: "bot", text: "Hi, I’m YN! Ask me anything." },
+    ]);
 
-const predefinedButtons = ["Give me a tour!",
-    "What are your interests?",
-    "Show me your resume.",
-    "Tell me about UMass.",
-];
+    const predefinedButtons = [
+        "Give me a tour!",
+        "What are your interests?",
+        "Show me your resume.",
+        "Tell me about UMass.",
+    ];
 
     const [input, setInput] = useState("");
     const [isTouring, setIsTouring] = useState(false);
     const [tourText, setTourText] = useState("");
-    
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
@@ -42,7 +42,7 @@ const predefinedButtons = ["Give me a tour!",
     const sendMessage = async () => {
         if (input.trim() === "") return;
         const trimmedInput = input.trim();
-        var response = "I'm not sure how to respond to that.";
+        var response = "I'm not sure how to respond to that. For further questions, feel free to reach out to me through the contact page or refer to the buttons below.";
         if (trimmedInput === "Give me a tour!") {
             response = "Sure! I can guide you through a tour of our features.";
             startTour();
@@ -130,65 +130,62 @@ const predefinedButtons = ["Give me a tour!",
         return new Promise((res) => setTimeout(res, ms));
     }
 
-   return (
-    <>
-        {isTouring && (
-            <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-purple-300 text-black px-4 py-2 rounded shadow z-100 text-center">
-                <p className="font-semibold">{tourText}</p>
+    return (
+        <>
+            {isTouring && (
+                <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-purple-300 text-black px-4 py-2 rounded shadow z-100 text-center">
+                    <p className="font-semibold">{tourText}</p>
+                </div>
+            )}
+
+            <div className="chatbot-container text-black">
+                <button className="chatbot-toggle" onClick={toggleChat}>
+                    <FaRobot size={24} />
+                </button>
+
+                <div className="chatbot-box">
+                    {/* Message display */}
+                    <div className="chatbot-messages">
+                        {messages.map((msg, index) => (
+                            <div
+                                key={index}
+                                className={`chatbot-msg ${msg.sender}`}
+                            >
+                                {msg.text}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Predefined buttons ABOVE input */}
+                    <div className="chatbot-quick-buttons px-4 py-2 flex flex-wrap gap-2">
+                        {predefinedButtons.map((btn, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setInput(btn)}
+                            >
+                                {btn}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Input field */}
+                    <div className="chatbot-input">
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            onKeyDown={(e) =>
+                                e.key === "Enter" && sendMessage(input)
+                            }
+                            placeholder="Type your message..."
+                            required
+                        />
+                        <button onClick={() => sendMessage(input)}>Send</button>
+                    </div>
+                </div>
             </div>
-        )}
-
-        <div className="chatbot-container text-black">
-            <button className="chatbot-toggle" onClick={toggleChat}>
-                <FaRobot size={24} />
-            </button>
-
-            <div className="chatbot-box">
-                {/* Message display */}
-                <div className="chatbot-messages">
-                    {messages.map((msg, index) => (
-                        <div
-                            key={index}
-                            className={`chatbot-msg ${msg.sender}`}
-                        >
-                            {msg.text}
-                        </div>
-                    ))}
-                </div>
-
-                {/* Input field */}
-                <div className="chatbot-input">
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={(e) =>
-                            e.key === "Enter" && sendMessage(input)
-                        }
-                        placeholder="Type your message..."
-                        required
-                    />
-                    <button onClick={() => sendMessage(input)}>Send</button>
-                </div>
-
-                {/* Predefined buttons below input */}
-                <div className="chatbot-quick-buttons px-4 py-2 flex flex-wrap gap-2">
-                    {predefinedButtons.map((btn, i) => (
-                        <button
-                            key={i}
-                            className="bg-gray-100 hover:bg-gray-200 text-sm shadow hover:shadow-md rounded px-3 py-1"
-                            onClick={() => setInput(btn)}
-
-                        >
-                            {btn}
-                        </button>
-                    ))}
-                </div>
-            </div>
-        </div>
-    </>
-);
-
+        </>
+    );
 };
 
 export default Chatbot;
