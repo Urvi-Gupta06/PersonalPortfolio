@@ -8,8 +8,8 @@ const Chatbot = () => {
     { sender: "bot", text: "Hi, I’m YN! Ask me anything." },
 ]);
 
-const predefinedButtons = [
-    "What’s ___?",
+const predefinedButtons = ["Give me a tour!",
+    "What are your interests?",
     "Show me your resume.",
     "Tell me about UMass.",
 ];
@@ -43,16 +43,16 @@ const predefinedButtons = [
         if (input.trim() === "") return;
         const trimmedInput = input.trim();
         var response = "I'm not sure how to respond to that.";
-        if (trimmedInput.includes("tour")) {
+        if (trimmedInput === "Give me a tour!") {
             response = "Sure! I can guide you through a tour of our features.";
             startTour();
-        } else if (trimmedInput === "help") {
+        } else if (trimmedInput === "What are your interests?") {
             response =
-                "You can ask me about our services, features, or anything else!";
-        } else if (trimmedInput === "hello") {
-            response = "Hello! How can I assist you today?";
-        } else if (trimmedInput === "bye") {
-            response = "Goodbye! Have a great day!";
+                "I’m interested in technology, artificial intelligence, and solving real-world problems through innovative solutions. I enjoy learning new things, exploring creative ideas, and helping others by providing useful information and support.";
+        } else if (trimmedInput === "Show me your resume.") {
+            response = "You can download my resume directly from the home page.";
+        } else if (trimmedInput === "Tell me about UMass.") {
+            response = "UMass is a great university located in Amherst, Massachusetts. It offers a wide range of programs and has a vibrant campus life.";
         }
         setInput("");
         await addUserInput(trimmedInput);
