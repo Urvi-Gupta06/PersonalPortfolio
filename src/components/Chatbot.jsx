@@ -130,63 +130,65 @@ const predefinedButtons = ["Give me a tour!",
         return new Promise((res) => setTimeout(res, ms));
     }
 
-    return (
-        <>
-            {isTouring && (
-                <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-purple-300 text-black px-4 py-2 rounded shadow z-100 text-center">
-                    <p className="font-semibold">{tourText}</p>
-                </div>
-            )}
-            <div className="chatbot-container text-black">
-                <button className="chatbot-toggle" onClick={toggleChat}>
-                    <FaRobot size={24} />
-                </button>
-                <div className="chatbot-box">
-                    <div className="chatbot-messages">
-                        {messages.map((msg, index) => (
-                            <div
-                                key={index}
-                                className={`chatbot-msg ${msg.sender}`}
-                            >
-                                {msg.text}
-                            </div>
-                        ))}
-                    </div>
-                    {messages.length === 1 && (
-    <div className="flex flex-col gap-2 px-4 py-2">
-        {predefinedButtons.map((btn, i) => (
-            <button
-                key={i}
-                className="bg-gray-100 hover:bg-gray-200 text-sm rounded px-3 py-1 text-left"
-                onClick={() => {
-                    setInput(btn);
-                    sendMessage();
-                }}
-            >
-                {btn}
+   return (
+    <>
+        {isTouring && (
+            <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-purple-300 text-black px-4 py-2 rounded shadow z-100 text-center">
+                <p className="font-semibold">{tourText}</p>
+            </div>
+        )}
+
+        <div className="chatbot-container text-black">
+            <button className="chatbot-toggle" onClick={toggleChat}>
+                <FaRobot size={24} />
             </button>
-        ))}
-    </div>
-)}
 
+            <div className="chatbot-box">
+                {/* Message display */}
+                <div className="chatbot-messages">
+                    {messages.map((msg, index) => (
+                        <div
+                            key={index}
+                            className={`chatbot-msg ${msg.sender}`}
+                        >
+                            {msg.text}
+                        </div>
+                    ))}
+                </div>
 
-                    <div className="chatbot-input">
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={(e) =>
-                                e.key === "Enter" && sendMessage()
-                            }
-                            placeholder="Type your message..."
-                            required
-                        />
-                        <button onClick={sendMessage}>Send</button>
-                    </div>
+                {/* Input field */}
+                <div className="chatbot-input">
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) =>
+                            e.key === "Enter" && sendMessage(input)
+                        }
+                        placeholder="Type your message..."
+                        required
+                    />
+                    <button onClick={() => sendMessage(input)}>Send</button>
+                </div>
+
+                {/* Predefined buttons below input */}
+                <div className="chatbot-quick-buttons px-4 py-2 flex flex-wrap gap-2">
+                    {predefinedButtons.map((btn, i) => (
+                        <button
+                            key={i}
+                            className="bg-gray-100 hover:bg-gray-200 text-sm shadow hover:shadow-md rounded px-3 py-1"
+                            onClick={() => setInput(btn)}
+
+                        >
+                            {btn}
+                        </button>
+                    ))}
                 </div>
             </div>
-        </>
-    );
+        </div>
+    </>
+);
+
 };
 
 export default Chatbot;
