@@ -6,7 +6,7 @@ import ParticlesBackground from "./components/ParticlesBackground";
 import Home from "./pages/home";
 import Experience from "./pages/experience";
 import Projects from "./pages/projects";
-import TechStack from "./pages/techStack";
+import Skills from "./pages/skills";
 import Contact from "./pages/contact";
 
 export default function RootLayout() {
@@ -29,11 +29,8 @@ export default function RootLayout() {
                     <div className="min-h-screen scroll-mt-10" id="projects">
                         <Projects />
                     </div>
-                    <div
-                        className="scroll-mt-10 bg-black/10 py-8"
-                        id="techStack"
-                    >
-                        <TechStack />
+                    <div className="scroll-mt-10 bg-black/10 py-8" id="skills">
+                        <Skills />
                     </div>
                     <div className="min-h-screen scroll-mt-10" id="contact">
                         <Contact />

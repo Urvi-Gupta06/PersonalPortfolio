@@ -40,30 +40,34 @@ export default function Navbar() {
                     >
                         <X size={24} />
                     </button>
-                    {["#home", "#experience", "#projects", "#contact"].map(
-                        (path, i) => (
-                            <a
-                                key={i}
-                                href={path}
-                                onClick={() => {
-                                    setIsOpen(false);
-                                    ignoreScroll.current = true;
-                                    setTimeout(() => {
-                                        lastScrollY.current = y;
-                                        ignoreScroll.current = false;
-                                    }, 700);
-                                }}
-                                className="text-white hover:text-purple-400 transition"
-                            >
-                                {path === "#home"
-                                    ? "Home"
-                                    : path
-                                          .replace("#", "")
-                                          .charAt(0)
-                                          .toUpperCase() + path.slice(2)}
-                            </a>
-                        )
-                    )}
+                    {[
+                        "#home",
+                        "#experience",
+                        "#projects",
+                        "#skills",
+                        "#contact",
+                    ].map((path, i) => (
+                        <a
+                            key={i}
+                            href={path}
+                            onClick={() => {
+                                setIsOpen(false);
+                                ignoreScroll.current = true;
+                                setTimeout(() => {
+                                    lastScrollY.current = y;
+                                    ignoreScroll.current = false;
+                                }, 700);
+                            }}
+                            className="text-white hover:text-purple-400 transition"
+                        >
+                            {path === "#home"
+                                ? "Home"
+                                : path
+                                      .replace("#", "")
+                                      .charAt(0)
+                                      .toUpperCase() + path.slice(2)}
+                        </a>
+                    ))}
                 </div>
             </div>
 
@@ -125,6 +129,19 @@ export default function Navbar() {
                             }}
                         >
                             Projects
+                        </a>
+                        <a
+                            className="hover:text-purple-400 transition"
+                            href="#skills"
+                            onClick={() => {
+                                ignoreScroll.current = true;
+                                setTimeout(() => {
+                                    ignoreScroll.current = false;
+                                    lastScrollY.current = y;
+                                }, 700);
+                            }}
+                        >
+                            Skills
                         </a>
                         <a
                             className="hover:text-purple-400 transition"
