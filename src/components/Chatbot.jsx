@@ -111,7 +111,12 @@ const Chatbot = () => {
         await delay(3000);
         window.history.pushState({}, "", "/#projects");
         setTourText(
-            "Here are some of the cool things I've built — websites, apps, and more. Upcoming: Ways to contact me so that maybe we could build something awesome together!"
+            "These are some of the projects I've worked on. Each project reflects my skills and interests. Next, let's explore my skills and the technologies I work with."
+        );
+        await delay(3000);
+        window.history.pushState({}, "", "/#skills");
+        setTourText(
+            "These are the technical skills I bring to the table. I'm always eager to learn more! Upcoming: Ways to contact me so that maybe we could build something awesome together!"
         );
         await delay(3000);
         window.history.pushState({}, "", "/#contact");
