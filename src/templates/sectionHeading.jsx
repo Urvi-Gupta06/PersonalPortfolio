@@ -1,6 +1,6 @@
 const SectionHeading = ({ text }) => (
     <h1
-        className={`text-4xl font-bold text-purple-700 dark:text-purple-400 text-center`}
+        className={`text-4xl font-bold text-pink-500 dark:text-pink-400 text-center`}
     >
         {text}
     </h1>

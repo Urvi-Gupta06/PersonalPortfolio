@@ -45,6 +45,7 @@ export default function Navbar() {
                         "#experience",
                         "#projects",
                         "#skills",
+                        "#education",
                         "#contact",
                     ].map((path, i) => (
                         <a
@@ -92,7 +93,7 @@ export default function Navbar() {
                     </div>
                     <div className="flex gap-8 items-center text-black dark:text-white">
                         <a
-                            className="hover:text-purple-400 transition"
+                            className="hover:text-pink-400 transition"
                             href="#home"
                             onClick={() => {
                                 ignoreScroll.current = true;
@@ -105,7 +106,7 @@ export default function Navbar() {
                             Home
                         </a>
                         <a
-                            className="hover:text-purple-400 transition"
+                            className="hover:text-pink-400 transition"
                             href="#experience"
                             onClick={() => {
                                 ignoreScroll.current = true;
@@ -118,7 +119,7 @@ export default function Navbar() {
                             Experience
                         </a>
                         <a
-                            className="hover:text-purple-400 transition"
+                            className="hover:text-pink-400 transition"
                             href="#projects"
                             onClick={() => {
                                 ignoreScroll.current = true;
@@ -131,7 +132,7 @@ export default function Navbar() {
                             Projects
                         </a>
                         <a
-                            className="hover:text-purple-400 transition"
+                            className="hover:text-pink-400 transition"
                             href="#skills"
                             onClick={() => {
                                 ignoreScroll.current = true;
@@ -144,7 +145,20 @@ export default function Navbar() {
                             Skills
                         </a>
                         <a
-                            className="hover:text-purple-400 transition"
+                            className="hover:text-pink-400 transition"
+                            href="#education"
+                            onClick={() => {
+                                ignoreScroll.current = true;
+                                setTimeout(() => {
+                                    ignoreScroll.current = false;
+                                    lastScrollY.current = y;
+                                }, 700);
+                            }}
+                        >
+                            Education
+                        </a>
+                        <a
+                            className="hover:text-pink-400 transition"
                             href="#contact"
                             onClick={() => {
                                 ignoreScroll.current = true;

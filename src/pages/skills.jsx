@@ -9,7 +9,7 @@ function Skills() {
                     className="w-full flex flex-row items-center justify-center gap-4 flex-wrap animate-fade-in-top opacity-0 [&.animate]:opacity-100"
                     data-animate-on-scroll
                 >
-                    <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-300 dark:to-indigo-500">
+                    <h1 className="text-3xl md:text-5xl font-extrabold font-[Alata]] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-700 dark:from-pink-300 dark:to-pink-600">
                         Skills
                     </h1>
                 </div>
@@ -19,13 +19,13 @@ function Skills() {
                     {config.techStackPage.list.map((tech, index) => (
                         <div
                             key={index}
-                            className="bg-purple-200/60 dark:bg-purple-700/60 
+                            className="bg-pink-200/60 dark:bg-pink-700/60 
                                        text-black dark:text-white 
                                        px-5 py-2 rounded-full 
                                        shadow-sm hover:shadow-md 
-                                       border border-purple-300/40 
-                                       hover:bg-purple-300/70 
-                                       dark:hover:bg-purple-600/70 
+                                       border border-pink-300/40 
+                                       hover:bg-pink-300/70
+                                       dark:hover:bg-pink-600/70 
                                        transition-all duration-300"
                         >
                             {tech.trim()}

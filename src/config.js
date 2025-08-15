@@ -1,6 +1,6 @@
 export default {
-    siteTitle: "My Portfolio",
-    tagline: "Built with React and Tailwind",
+    siteTitle: "Urvi Gupta",
+    tagline: "Built with React.js and Tailwind CSS",
     meta: {
         description:
             "Personal portfolio showcasing projects, skills and contact information.",
@@ -8,10 +8,7 @@ export default {
         keywords: "portfolio, react, template, web developer",
     },
     social: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        email: "mailto:you@example.com",
-        abbreviatedName: "YN",
+        abbreviatedName: "UG",
     },
     theme: {
         backgroundLight: "#f9fafb",
@@ -33,8 +30,6 @@ export default {
     },
     home: {
         heading: "Name Here",
-        subHeading:
-            "AI Enthusiast interested in Web Development and Machine Learning and integrating cybersecurity.",
         buttonLabel: "Let's connect",
     },
     about: {
@@ -63,42 +58,30 @@ export default {
         heading: "Tech Stack",
         list: [
             "Python",
-            "JavaScript",
             "Java",
-            "TypeScript",
-            "C++",
+            "JavaScript",
             "React.js",
-            "Next.js",
-            "Tailwind CSS",
-            "HTML5",
-            "CSS3",
             "Node.js",
-            "Express.js",
-            "Flask",
-            "REST APIs",
-            "GraphQL",
+            "Tailwind CSS",
+            "HTML",
+            "Django",
             "MySQL",
-            "PostgreSQL",
-            "MongoDB",
             "SQLite",
-            "Firebase",
-            "Git & GitHub",
-            "Docker",
-            "Linux",
-            "VS Code",
+            "Git",
+            "GitHub",
+            "TanStack Router",
+            "JUnit",
             "Vite", 
-            "NumPy",
-            "Pandas",
-            "scikit-learn",
-            "TensorFlow",
-            "OpenAI API",
-            "Jest",
-            "Netlify",
             "Vercel",
-            "Heroku",
-            "Supabase"
+            "VS Code",
+            "Canva",   
 
         ],
+    },
+    education:{
+        heading: "Education",
+        description:
+            "Briefly describe your educational background, including degrees and institutions.",
     },
     contact: {
         heading: "Let's Connect",

@@ -1,6 +1,6 @@
 import { ProjectComponent } from "../templates/basicUIComponents";
 import { useEffect } from "react";
-import "@fontsource/montserrat"; // Import Montserrat font
+
 
 const Projects = () => {
     useEffect(() => {
@@ -42,10 +42,7 @@ const Projects = () => {
                         className="w-full flex flex-row items-center justify-center gap-4 flex-wrap animate-fade-in-top opacity-0 [&.animate]:opacity-100"
                         data-animate-on-scroll
                     >
-                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-300 dark:to-indigo-500">
-                            My
-                        </h1>
-                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-300 dark:to-indigo-500">
+                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-700 dark:from-pink-300 dark:to-pink-600">
                             Projects
                         </h1>
                     </div>
@@ -53,39 +50,32 @@ const Projects = () => {
                     <div className="flex flex-col items-center justify-center gap-20 w-full">
                         {/* Project Component */}
                         <ProjectComponent
-                            Image="src/Project_Image/code_collab.png"
+                            Image="src/Project_Image/pennywise.png"
                             Number="01"
-                            Title="Personal Website"
-                            ImageLink="https://github.com/rbose21-05/PersonalPortfolio_CodeCollab"
-                            Text1="This is my personal website, built using React.js and Tailwind CSS. It showcases my projects, skills, and experiences."
-                            Text2="The website is designed to be responsive and user-friendly, providing a seamless experience across devices. It features a modern design with smooth animations and transitions."
+                            Title="PennyWise"
+                            ImageLink="https://github.com/Urvi-Gupta06/HackHer4132025"
+                            Text1="I led a 6-person team to develop a full-stack MVP of a smart student budgeting platform under 24 hours, winning the Best Beginner Hack among 45+ projects."
+                            Text2="We implemented Django views and models with SQLite to handle transactions and fund allocation across budgeting features."
+                            Text3="The application includes an interactive dashboard to visualize financial data built with JavaScript and Node.js for real-time loan tracking."
+                            
                         />
 
                         <ProjectComponent
                             Image="src/Project_Image/code_collab.png"
                             Number="02"
-                            Title="Project 2"
+                            Title="Customizable Portfolio Website Template"
                             ImageLink="https://github.com/rbose21-05/PersonalPortfolio_CodeCollab"
-                            Text1="Description of Project 2"
-                            Text2="Added Description of features and tech stack of Project 2."
+                            Text1="To help students creatively showcase their strengths and journeys when applying for job applications, I worked in a team of six to develop a customizable portfolio website template."
+                            Text2="This user-friendly template incorporates clean, reponsive UI and is built with React.js, Tailwind CSS, and TanStack Router."
                         />
 
                         <ProjectComponent
-                            Image="src/Project_Image/code_collab.png"
+                            Image="src/Project_Image/datasystem.jpg"
                             Number="03"
-                            Title="Project 3"
-                            ImageLink="https://github.com/rbose21-05/PersonalPortfolio_CodeCollab"
-                            Text1="Description of Project 3"
-                            Text2="Added Description of features and tech stack of Project 3."
-                        />
-
-                        <ProjectComponent
-                            Image="src/Project_Image/code_collab.png"
-                            Number="04"
-                            Title="Project 4"
-                            ImageLink="https://github.com/rbose21-05/PersonalPortfolio_CodeCollab"
-                            Text1="Description of Project 4"
-                            Text2="Added Description of features and tech stack of Project 4."
+                            Title="Data Management System"
+                            ImageLink="https://www.linkedin.com/in/urvi-guptaa/details/projects/"
+                            Text1="To help a local non-profit hospital transcend outdated paper records in my hometown in India, I developed a simple program with 10 unique features tailored to a local hospital’s needs of storing atient records." 
+                            Text2="My Python-MySQL backend eliminated 500+ redundant entries and reduced retrieval time by 40%."
                         />
                     </div>
                 </div>

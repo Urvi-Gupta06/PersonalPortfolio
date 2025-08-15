@@ -5,14 +5,14 @@ import "./Chatbot.css";
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState([
-        { sender: "bot", text: "Hi, I’m YN! Ask me anything." },
+        { sender: "bot", text: "Hi, I’m Urvi's bot! How can I help you today?" },
     ]);
 
     const predefinedButtons = [
-        "Give me a tour!",
-        "What are your interests?",
-        "Show me your resume.",
-        "Tell me about UMass.",
+        "Give me a tour of this website.",
+        "What are Urvi's hobbies?",
+        "Show me Urvi's resume.",
+        "Share a fun fact about Urvi.",
     ];
 
     const [input, setInput] = useState("");
@@ -42,17 +42,31 @@ const Chatbot = () => {
     const sendMessage = async () => {
         if (input.trim() === "") return;
         const trimmedInput = input.trim();
-        var response = "I'm not sure how to respond to that. For further questions, feel free to reach out to me through the contact page or refer to the buttons below.";
-        if (trimmedInput === "Give me a tour!") {
-            response = "Sure! I can guide you through a tour of our features.";
+        var response = "I'm not sure how to respond to that. For further questions, please refer to the buttons below or reach out through the contact page.";
+        if (trimmedInput === "Give me a tour of this website.") {
+            response = "Sure, let me take you through this portfolio!";
             startTour();
-        } else if (trimmedInput === "What are your interests?") {
+        } else if (trimmedInput === "What are Urvi's hobbies?") {
             response =
-                "I’m interested in technology, artificial intelligence, and solving real-world problems through innovative solutions. I enjoy learning new things, exploring creative ideas, and helping others by providing useful information and support.";
-        } else if (trimmedInput === "Show me your resume.") {
-            response = "You can download my resume directly from the home page.";
-        } else if (trimmedInput === "Tell me about UMass.") {
-            response = "UMass is a great university located in Amherst, Massachusetts. It offers a wide range of programs and has a vibrant campus life.";
+                "Urvi loves singing and has a diploma in Hindustani classical music (vocals)! She also enjoys reading, painting, and working out.";
+        } else if (trimmedInput === "Show me Urvi's resume.") {
+            response = "You can download it directly from the home page!";
+        } else if (trimmedInput === "Share a fun fact about Urvi.") {
+            response = (
+    <span>
+        Urvi has published a book called{" "}
+        <strong>The Bucket List of Living</strong>! It's available worldwide on{" "}
+        <a
+            href="https://www.amazon.com/dp/9357654569"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="chatbot-link"
+        >
+            Amazon
+        </a>.
+    </span>
+);
+
         }
         setInput("");
         await addUserInput(trimmedInput);
@@ -101,30 +115,30 @@ const Chatbot = () => {
         await delay(400);
         setIsTouring(true);
         setTourText(
-            "Welcome to my portfolio! Here you can find information about my experience, projects, skills, and how to contact me. Let's start with my experience."
+            "Welcome to Urvi's portfolio! It encapsulates all about her and all that she brings to the table! Let's start with her experience."
         );
-        await delay(3000);
+        await delay(3400);
         window.history.pushState({}, "", "/#experience");
         setTourText(
-            "These are some spaces I've contributed in and added value to. After this, let me take you through some projects I'm proud of!"
+            "These are the spaces she has contributed in and added value to so far. After this, let me take you through some projects she's proud of!"
         );
-        await delay(3000);
+        await delay(3400);
         window.history.pushState({}, "", "/#projects");
         setTourText(
-            "These are some of the projects I've worked on. Each project reflects my skills and interests. Next, let's explore my skills and the technologies I work with."
+            "Each of these projects comes from a place of passion and sincerety, reflecting her skills and interests. Next, let's look at her skills."
         );
-        await delay(3000);
+        await delay(3400);
         window.history.pushState({}, "", "/#skills");
         setTourText(
-            "These are the technical skills I bring to the table. I'm always eager to learn more! Upcoming: Ways to contact me so that maybe we could build something awesome together!"
+            "These are the technologies she currently works with. Urvi's always eager to learn more and expand her skill set! Upcoming: Ways to contact her!"
         );
-        await delay(3000);
+        await delay(3400);
         window.history.pushState({}, "", "/#contact");
-        setTourText("There are a LOT of ways to reach me.");
-        await delay(3000);
+        setTourText("She's vailable through all these platforms. I hope you will get in touch and build something impactful together!");
+        await delay(3400);
         window.history.pushState({}, "", "/#home");
         setTourText(
-            "So that was the tour! Hope you had a ton of fun and know all about me now!"
+            "That's it for the tour, I hope it was helpful!"
         );
         await delay(3000);
         setIsTouring(false);
@@ -138,7 +152,7 @@ const Chatbot = () => {
     return (
         <>
             {isTouring && (
-                <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-purple-300 text-black px-4 py-2 rounded shadow z-100 text-center">
+                <div className="fixed bottom-[20px] w-[80%] left-1/2 transform -translate-x-1/2 bg-pink-200/60 text-black px-4 py-2 rounded shadow z-100 text-center">
                     <p className="font-semibold">{tourText}</p>
                 </div>
             )}
@@ -162,7 +176,7 @@ const Chatbot = () => {
                     </div>
 
                     {/* Predefined buttons ABOVE input */}
-                    <div className="chatbot-quick-buttons px-4 py-2 flex flex-wrap gap-2">
+                    <div className="chatbot-quick-buttons px-2 py-1 flex flex-wrap gap-2">
                         {predefinedButtons.map((btn, i) => (
                             <button
                                 key={i}

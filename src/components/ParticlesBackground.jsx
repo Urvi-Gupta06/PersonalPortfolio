@@ -19,11 +19,11 @@ const ParticlesBackground = () => {
         lineColor:
             mode === "dark"
                 ? "rgba(255, 255, 255, 0.8)" // White in dark mode
-                : "rgba(126, 34, 206, 0.6)", // Purple in light mode
+                : "rgba(249,168,212,1.000)",//Pink in light mode
         particleColor:
             mode === "dark"
                 ? "rgba(255, 255, 255, 0.8)" // White in dark mode
-                : "rgba(126, 34, 206, 0.6)", // Purple in light mode
+                : "rgba(249,168,212,1.000)",//Pink in light mode
         strokeStyle:
             mode === "dark"
                 ? config.theme.strokeStyleDark

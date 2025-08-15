@@ -4,7 +4,7 @@ const CustomButton = ({ label, onClick }) => {
     return (
         <button
             onClick={onClick}
-            className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition duration-300  dark:bg-purple-500 dark:hover:bg-purple-600 dark:text-black"
+            className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition duration-300  dark:bg-pink-500 dark:hover:bg-pink-600 dark:text-white"
         >
             {label}
         </button>

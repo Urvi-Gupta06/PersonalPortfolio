@@ -6,59 +6,38 @@ import {
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
-import '@fontsource/montserrat'; 
+
 
 
   
 const experiences = [
   {
-    title: "Software Development Intern",
-    company_name: "Google",
-    icon: "/icons/google.png",
-    iconBg: "#383E56",
-    date: "May 2025 – Present",
-    points: [
-      "Contributed to frontend development for internal tools using React and TypeScript.",
-      "Participated in daily stand-ups and collaborated with engineers across multiple time zones.",
-      "Improved performance of a core dashboard by optimizing API usage and UI rendering.",
-    ],
-  },
-  {
-    title: "Research Assistant",
-    company_name: "University of Massachusetts Amherst",
+    title: "Undergraduate Course Assistant, Object-Oriented Programming",
+    company_name: "Manning College of Information and Computer Sciences",
     icon: "/icons/umass.jpg",
     iconBg: "#E6DEDD",
-    date: "Jan 2025- April 2025",
+    date: "May 2025 – Present",
     points: [
-      "Assisted in designing and running experiments focused on human-computer interaction.",
-      "Collected and pre-processed data for analysis using Python and Jupyter Notebooks.",
-      "Presented research findings in weekly lab meetings and contributed to paper drafting.",
+      "Provided academic assistance to 300+ students in mastering concepts like Abstraction, Inheritance, Polymorphism, Encapsulation, and Time Complexity Analysis.",  
+      "Automated Gradescope imports by cleaning CSVs and mapping student IDs to scores in Python, cutting grading time by 20%.",
+      "Led technical labs and live code debugging for 30+ students, strengthening error-handling and problem-solving skills.",
     ],
   },
   {
-    title: "Software Development Intern",
-    company_name: "Amazon",
-    icon: "/icons/amazon.png",
-    iconBg: "#383E56",
-    date: "May 2024- September 2024",
-    points: [
-      "Developed microservice features as part of a distributed cloud infrastructure team.",
-      "Built automated testing pipelines to improve deployment safety and reliability.",
-      "Documented APIs and conducted peer code reviews for quality assurance.",
-    ],
-  },
-  {
-    title: "Software Development Intern",
-    company_name: "Meta",
-    icon: "/icons/meta.png",
+    title: "IT Student Intern",
+    company_name: "UMass Amherst Information Technology",
+    icon: "/icons/umass.jpg",
     iconBg: "#E6DEDD",
-    date: "Jan 2024- May 2024",
+    date: "Aug 2024 - Dec 2024",
     points: [
-      "Worked on prototype features for a mobile social media product using React Native.",
-      "Implemented UI changes based on UX research and A/B testing results.",
-      "Learned about large-scale engineering practices and design systems in production apps.",
+      "Streamlined user flows, analyzed feedback and improved usability of IT platforms like Service Catalog and Student Hub.", 
+      "Optimized resource lookup process by 60% by removing redundant steps, thus reducing navigation time.",
+      "Implemented auto-filled forms with JavaScript and HTML, cutting average completion time by 50%.",
+      "Resolved system errors and server crashes in real-time, reducing average downtime from 10 minutes to under 6 minutes for 200+ students.", 
+      "Created strategic digital content that led to 1,200+ post interactions; drove 300 additional website click-throughs and 150 new student loginss.",
     ],
   },
+
 ];
 
 const ExperienceCard = ({ experience }) => (
@@ -76,6 +55,7 @@ const ExperienceCard = ({ experience }) => (
     }}
     contentArrowStyle={{ borderRight: "7px solid #232631" }}
     date={experience.date}
+    dateClassName="timeline-date"
     iconStyle={{ background: experience.iconBg }}
     icon={
       <div className="flex justify-center items-center w-full h-full">
@@ -89,10 +69,11 @@ const ExperienceCard = ({ experience }) => (
   >
     <div className="text-left">
       <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-      <p className="text-secondary text-[16px] font-semibold mb-3">
-        {experience.company_name}
+      <p style={{ color: "#ffffff", fontWeight: "bold" }}>
+  {experience.company_name}
       </p>
-      <ul className="list-disc list-inside space-y-1">
+
+      <ul className="list-disc list-inside space-y-1 mt-3">
         {experience.points.map((point, i) => (
           <li key={i} className="text-white text-[14px] tracking-wider">
             {point}
@@ -109,10 +90,7 @@ function Experience() {
                         className="w-full flex flex-row items-center justify-center gap-4 flex-wrap animate-fade-in-top opacity-0 [&.animate]:opacity-100"
                         data-animate-on-scroll
                     >
-                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-300 dark:to-indigo-500">
-                          Work
-                        </h1>
-                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Montserrat] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-purple-300 dark:to-indigo-500">
+                        <h1 className="text-5xl md:text-6xl font-extrabold font-[Alata] tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r  from-pink-400 to-pink-700 dark:from-pink-300 dark:to-pink-600">
                           Experience
                         </h1>
                     </div>

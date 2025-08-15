@@ -114,3 +114,12 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.chatbot-link {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.chatbot-link:hover {
+    color: #0056b3;
+}

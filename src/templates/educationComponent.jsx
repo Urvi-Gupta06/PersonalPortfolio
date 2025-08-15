@@ -1,14 +1,14 @@
 import { useEffect, useCallback } from "react";
 import "./animation.css";
 
-var ProjectComponent = ({
+var EducationComponent = ({
     Image,
-    Number,
     Title,
-    ImageLink,
     Text1,
     Text2,
     Text3,
+    Text4,
+    Text5,
 }) => {
     useEffect(() => {
         const scrollElements = document.querySelectorAll(
@@ -31,10 +31,6 @@ var ProjectComponent = ({
         return () => scrollElements.forEach((el) => observer.unobserve(el));
     }, []);
 
-    const handleClick = useCallback(() => {
-        window.open(ImageLink, "_blank");
-    }, [ImageLink]);
-
     return (
         <div className="flex flex-col md:flex-row items-center justify-start gap-10 w-full">
             {/* Main Image */}
@@ -42,7 +38,6 @@ var ProjectComponent = ({
                 className="h-80 object-cover rounded-xl shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105 hover:brightness-110"
                 src={Image}
                 alt={Title}
-                onClick={handleClick}
                 data-animate-on-scroll
             />
 
@@ -52,13 +47,9 @@ var ProjectComponent = ({
                 data-animate-on-scroll
             >
                 <div className="flex flex-col items-start justify-start gap-6">
-                    {/* Number */}
-                    <div className="text-5xl font-extrabold tracking-tight leading-tight text-black dark:text-white">
-                        {Number}
-                    </div>
 
                     {/* Title */}
-                    <h1 className="text-3xl font-bold tracking-tight leading-snug text-black dark:text-white">
+                    <h1 className="text-4xl font-bold tracking-tight leading-snug text-black dark:text-white">
                         {Title}
                     </h1>
 
@@ -67,33 +58,14 @@ var ProjectComponent = ({
                         <p className="m-0">{Text1}</p>
                         <p className="m-0">{Text2}</p>
                         <p className="m-0">{Text3}</p>
+                        <p className="m-0">{Text4}</p>
+                        <p className="m-0">{Text5}</p>
                     </div>
 
-                    {/* CTA Button with Arrow */}
-                    <button
-                        onClick={handleClick}
-                        className="mt-4 flex items-center gap-2 px-4 py-1 text-white opacity-100 rounded-md shadow-md hover:bg-pink-500 transition"
-                    >
-                        <span></span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2}
-                            stroke="currentColor"
-                            className="w-5 h-5 text-black dark:text-white"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                            />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ProjectComponent;
+export default EducationComponent;
